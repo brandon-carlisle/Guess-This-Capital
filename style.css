@@ -71,9 +71,9 @@ button:focus-visible {
 }
 
 .card {
-  background-color: #213547;
-  border: 2px solid #535bf2;
-  border-radius: 3px;
+  /* background-color: #213547; */
+  /* border: 2px solid #535bf2; */
+  /* border-radius: 3px; */
   margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
@@ -132,4 +132,15 @@ button:focus-visible {
   display: hidden;
   opacity: 0;
   transform: translateY(80%);
+}
+
+.score {
+  margin-bottom: 1rem;
+}
+.score > span {
+  font-size: 1.8rem;
+}
+
+.time > span {
+  font-size: 1.8rem;
 }

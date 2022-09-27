@@ -91,6 +91,7 @@ button:focus-visible {
 }
 
 .card__flag--img {
+  width: 25rem;
   object-fit: contain;
 }
 

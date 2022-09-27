@@ -7,4 +7,9 @@ export const state = {
   },
 };
 
-const peru = await getJSON('https://restcountries.com/v3.1/name/peru');
+const getPeru = async function () {
+  const peru = await getJSON('https://restcountries.com/v3.1/all');
+  console.log(peru);
+};
+
+getPeru();

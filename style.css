@@ -112,6 +112,7 @@ button:focus-visible {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-bottom: 3rem;
 }
 
 .form__input {
@@ -126,4 +127,19 @@ button:focus-visible {
 .form__input:focus,
 .form__input:focus-visible {
   outline: 4px auto #535bf2;
+}
+
+.answer-validation__icon {
+  opacity: 1;
+  display: block;
+  transform: translate(0);
+  transition: all 0.2s;
+
+  font-size: 4rem;
+}
+
+.hidden {
+  display: hidden;
+  opacity: 0;
+  transform: translateY(80%);
 }

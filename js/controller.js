@@ -1,3 +1,2 @@
 import '../style.css';
-
-console.log('Hello world');
+import * as model from './model';

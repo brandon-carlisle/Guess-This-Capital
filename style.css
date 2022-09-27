@@ -55,9 +55,8 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  font-size: 2rem;
+  padding: 1rem;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
@@ -82,4 +81,49 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.card {
+  background-color: #213547;
+  border: 2px solid #535bf2;
+  border-radius: 3px;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem 4rem;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.card__name {
+  font-size: 3rem;
+}
+
+.card__flag {
+  width: 25rem;
+}
+
+.card__flag--img {
+  object-fit: contain;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form__input {
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.form__input:focus,
+.form__input:focus-visible {
+  outline: 4px auto #535bf2;
 }

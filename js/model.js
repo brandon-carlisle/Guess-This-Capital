@@ -8,6 +8,3 @@ export const state = {
 };
 
 const peru = await getJSON('https://restcountries.com/v3.1/name/peru');
-
-console.log(peru.name.common);
-console.log(peru.capital[0]);

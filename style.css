@@ -50,6 +50,9 @@ h1 {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 button {
@@ -74,10 +77,11 @@ button:focus-visible {
   /* background-color: #213547; */
   /* border: 2px solid #535bf2; */
   /* border-radius: 3px; */
-  margin-bottom: 3rem;
+  /* width: 30rem; */
+  margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
-  padding: 3.2rem 4rem;
+  /* padding: 3.2rem 4rem; */
   gap: 1.6rem;
   align-items: center;
 }
@@ -86,19 +90,21 @@ button:focus-visible {
   font-size: 3rem;
 }
 
-.card__flag {
+/* .card__flag {
   width: 30rem;
-}
+  height: 15rem;
+} */
 
 .card__flag--img {
-  width: 100%;
-  object-fit: cover;
+  width: 32rem;
+  height: 15rem;
+  object-fit: contain;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  width: 30rem;
   gap: 1rem;
   margin-bottom: 3rem;
 }
@@ -119,6 +125,10 @@ button:focus-visible {
 .form__input:focus,
 .form__input:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.answer-validation {
+  margin-bottom: 2rem;
 }
 
 .answer-validation__icon {

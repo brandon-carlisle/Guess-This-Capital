@@ -9,8 +9,13 @@ const controlCard = async function () {
 };
 
 const controlSubmitAnswer = function (data) {
+  // Check if answer is correct
   if (model.checkAnswer(data)) {
-    alert('Correct Answer');
+    model.pushCurrentScore();
+    formView.clear();
+    setTimeout(() => {
+      controlCard();
+    }, 2000);
   } else {
     alert(
       `Wrong Answer, the correct answer was ${model.state.currentCountry.capitalCity}`

@@ -1,8 +1,9 @@
 class FormView {
   _parentElement = document.querySelector('.form');
+  _formInput = document.querySelector('.form__input');
 
   clear() {
-    this._parentElement.innerHTML = '';
+    this._formInput.value = '';
   }
 
   submitAnswerHandler(handler) {

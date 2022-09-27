@@ -87,12 +87,12 @@ button:focus-visible {
 }
 
 .card__flag {
-  width: 25rem;
+  width: 30rem;
 }
 
 .card__flag--img {
-  width: 25rem;
-  object-fit: contain;
+  width: 100%;
+  object-fit: cover;
 }
 
 .form {

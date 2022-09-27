@@ -7,7 +7,7 @@ const countryCodes = ['AFG','ALA','ALB','DZA','ASM','AND','AGO','AIA','ATA','ATG
 
 export const state = {
   currentCountry: {},
-  currentScore: null,
+  currentScore: 0,
   scores: [],
   gameTime: GAME_TIME_SEC,
 };
@@ -39,7 +39,20 @@ export const loadCountry = async function () {
   }
 };
 
+const formatAnswers = function (string) {
+  return string.toLowerCase().replaceAll(' ', '');
+};
+
 export const checkAnswer = function (answer) {
-  if (answer.answer === state.currentCountry.capitalCity) return true;
+  const correctAnswer = formatAnswers(state.currentCountry.capitalCity);
+  const submittedAnswer = formatAnswers(answer.answer);
+  if (submittedAnswer === correctAnswer) return true;
   else return false;
+};
+
+export const pushCurrentScore = function () {
+  // if (!state.currentScore) state.currentScore = 1;
+  // if ((state.currentCountry = 1)) state.currentScore++;
+  state.currentScore++;
+  console.log(state.currentScore);
 };

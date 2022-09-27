@@ -31,6 +31,8 @@ export const loadCountry = async function () {
     const code = countryCodes[index];
     const country = await getJSON(`${API_URL}${code}`);
 
+    if (!country.capital) loadCountry(); // Quick fix incase there is no capital city
+
     state.currentCountry = createCurrentCountryObject(country);
 
     console.log(state.currentCountry);
@@ -44,10 +46,14 @@ const formatAnswers = function (string) {
 };
 
 export const checkAnswer = function (answer) {
-  const correctAnswer = formatAnswers(state.currentCountry.capitalCity);
-  const submittedAnswer = formatAnswers(answer.answer);
-  if (submittedAnswer === correctAnswer) return true;
-  else return false;
+  try {
+    const correctAnswer = formatAnswers(state.currentCountry.capitalCity);
+    const submittedAnswer = formatAnswers(answer.answer);
+    if (submittedAnswer === correctAnswer) return true;
+    else return false;
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const pushCurrentScore = function () {

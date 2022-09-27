@@ -1,5 +1,6 @@
 import '../style.css';
 import * as model from './model';
+import { wait } from './helpers';
 import cardView from './views/cardView';
 import formView from './views/formView';
 import gameInfoView from './views/gameInfoView';
@@ -15,7 +16,7 @@ const controlGameInfo = function (state) {
   gameInfoView.update(score, time);
 };
 
-const controlSubmitAnswer = function (data) {
+const controlSubmitAnswer = async function (data) {
   // If answer is correct
   if (model.checkAnswer(data)) {
     model.pushCurrentScore();
@@ -23,10 +24,9 @@ const controlSubmitAnswer = function (data) {
     controlGameInfo();
     gameInfoView.showAnswerIcon(true);
 
-    setTimeout(() => {
-      controlCard();
-      gameInfoView.hideAnswerIcon();
-    }, 2000);
+    await wait(2);
+    controlCard();
+    gameInfoView.hideAnswerIcon();
   }
 
   // If answer is incorrect
@@ -35,10 +35,9 @@ const controlSubmitAnswer = function (data) {
     controlGameInfo();
     gameInfoView.showAnswerIcon(false);
 
-    setTimeout(() => {
-      controlCard();
-      gameInfoView.hideAnswerIcon();
-    }, 2000);
+    await wait(2);
+    controlCard();
+    gameInfoView.hideAnswerIcon();
   }
 };
 

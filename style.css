@@ -148,10 +148,7 @@ button:focus-visible {
 .score {
   margin-bottom: 1rem;
 }
-.score > span {
-  font-size: 1.8rem;
-}
-
+.score > span,
 .time > span {
   font-size: 1.8rem;
 }

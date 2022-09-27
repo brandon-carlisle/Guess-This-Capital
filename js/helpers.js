@@ -10,3 +10,6 @@ export const getJSON = async function (url) {
     console.error(error);
   }
 };
+
+export const wait = (seconds) =>
+  new Promise((resolve) => setTimeout(resolve, seconds * 1000));

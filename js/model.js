@@ -38,3 +38,8 @@ export const loadCountry = async function () {
     console.error(error);
   }
 };
+
+export const checkAnswer = function (answer) {
+  if (answer.answer === state.currentCountry.capitalCity) return true;
+  else return false;
+};

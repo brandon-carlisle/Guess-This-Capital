@@ -10,7 +10,7 @@ const controlCard = async function () {
   cardView.render(model.state.currentCountry);
 };
 
-const controlGameInfo = function (state) {
+const controlGameInfo = function () {
   const score = model.state.currentScore;
   const time = model.state.gameTime;
   gameInfoView.update(score, time);

@@ -9,8 +9,8 @@ class GameInfoView {
   }
 
   update(score, time) {
-    this._scoreValue.textContent = score;
-    this._timeValue.textContent = `${time}s`;
+    // this._scoreValue.textContent = score;
+    // this._timeValue.textContent = `${time}s`;
   }
 
   showAnswerIcon(boolean) {
@@ -21,6 +21,13 @@ class GameInfoView {
   hideAnswerIcon() {
     this._answerValidIcon.classList.add('hidden');
   }
+
+  // addTimerHandler(handler) {
+  //   document.addEventListener('load', function() {
+  //     this._timeValue.textContent =
+  //   })
+  //   handler()
+  // }
 }
 
 export default new GameInfoView();

@@ -10,10 +10,12 @@ const controlCard = async function () {
   cardView.render(model.state.currentCountry);
 };
 
+controlCard();
+
 const controlGameInfo = function () {
   const score = model.state.currentScore;
   const time = model.state.gameTime;
-  gameInfoView.update(score, time);
+  // gameInfoView.update(score, time);
 };
 
 const controlSubmitAnswer = async function (data) {
@@ -42,7 +44,6 @@ const controlSubmitAnswer = async function (data) {
 };
 
 const init = function () {
-  controlCard();
   formView.submitAnswerHandler(controlSubmitAnswer);
 };
 

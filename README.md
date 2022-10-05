@@ -9,8 +9,6 @@ Simply type your answer in the text box and submit to check if you are correct o
 ## ⌨️ Run this code
 
 ```bash
-npm install
-
 npm run dev
 npm run build
 npm run preview

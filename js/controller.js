@@ -13,7 +13,6 @@ const startGame = function () {
 
     // Render Country
     cardView.render(model.state.currentCountry);
-    console.log(model.state.currentCountry);
   };
   controlCard();
 

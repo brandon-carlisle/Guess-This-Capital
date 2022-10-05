@@ -12,6 +12,10 @@ class GameInfoView {
   hideAnswerIcon() {
     this._answerValidIcon.classList.add('hidden');
   }
+
+  updateScoreEl(score) {
+    this._scoreValue.textContent = score;
+  }
 }
 
 export default new GameInfoView();

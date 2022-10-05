@@ -49,3 +49,11 @@ export const checkAnswer = function (answer) {
   if (submittedAnswer === correctAnswer) return true;
   else return false;
 };
+
+export const addCurrentScore = function () {
+  state.currentScore++;
+};
+
+export const removeCurrentScore = function () {
+  state.currentScore = 0;
+};

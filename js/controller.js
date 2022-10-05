@@ -11,6 +11,7 @@ const controlCard = async function () {
 
   // Render Country
   cardView.render(model.state.currentCountry);
+  console.log(model.state.currentCountry);
 };
 controlCard();
 
@@ -20,6 +21,8 @@ const controlSubmitAnswer = async function (data) {
     if (model.checkAnswer(data)) {
       formView.clear();
       gameInfoView.showAnswerIcon(true);
+      model.addCurrentScore();
+      gameInfoView.updateScoreEl(model.state.currentScore);
 
       await wait(2);
       controlCard();
@@ -30,6 +33,8 @@ const controlSubmitAnswer = async function (data) {
     if (!model.checkAnswer(data)) {
       formView.clear();
       gameInfoView.showAnswerIcon(false);
+      model.removeCurrentScore();
+      gameInfoView.updateScoreEl(model.state.currentScore);
 
       await wait(2);
       controlCard();

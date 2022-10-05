@@ -6,40 +6,37 @@ import formView from './views/formView';
 import gameInfoView from './views/gameInfoView';
 
 const controlCard = async function () {
+  // Load country
   await model.loadCountry();
+
+  // Render Country
   cardView.render(model.state.currentCountry);
 };
-
 controlCard();
 
-const controlGameInfo = function () {
-  const score = model.state.currentScore;
-  const time = model.state.gameTime;
-  // gameInfoView.update(score, time);
-};
-
 const controlSubmitAnswer = async function (data) {
-  // If answer is correct
-  if (model.checkAnswer(data)) {
-    model.pushCurrentScore();
-    formView.clear();
-    controlGameInfo();
-    gameInfoView.showAnswerIcon(true);
+  try {
+    // If answer is correct
+    if (model.checkAnswer(data)) {
+      formView.clear();
+      gameInfoView.showAnswerIcon(true);
 
-    await wait(2);
-    controlCard();
-    gameInfoView.hideAnswerIcon();
-  }
+      await wait(2);
+      controlCard();
+      gameInfoView.hideAnswerIcon();
+    }
 
-  // If answer is incorrect
-  if (!model.checkAnswer(data)) {
-    formView.clear();
-    controlGameInfo();
-    gameInfoView.showAnswerIcon(false);
+    // If answer is incorrect
+    if (!model.checkAnswer(data)) {
+      formView.clear();
+      gameInfoView.showAnswerIcon(false);
 
-    await wait(2);
-    controlCard();
-    gameInfoView.hideAnswerIcon();
+      await wait(2);
+      controlCard();
+      gameInfoView.hideAnswerIcon();
+    }
+  } catch (error) {
+    console.error(error);
   }
 };
 

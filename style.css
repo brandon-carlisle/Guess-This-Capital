@@ -12,11 +12,8 @@ html {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   line-height: 24px;
   font-weight: 400;
-
-  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -61,6 +58,7 @@ button {
   font-size: 2rem;
   padding: 1rem;
   font-family: inherit;
+  color: rgba(255, 255, 255, 0.87);
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
@@ -94,7 +92,7 @@ button:focus-visible {
 .form {
   display: flex;
   flex-direction: column;
-  width: 30rem;
+  width: 100%;
   gap: 1rem;
   margin-bottom: 3rem;
 }
@@ -105,6 +103,7 @@ button:focus-visible {
   font-size: 2rem;
   padding: 1rem;
   font-family: inherit;
+  color: inherit;
   background-color: #1a1a1a;
   transition: border-color 0.25s;
   text-align: center;
@@ -135,10 +134,15 @@ button:focus-visible {
   transform: translateY(80%);
 }
 
-.score {
-  margin-bottom: 1rem;
+.game-info {
+  width: 100%;
 }
-.score > span,
-.time > span {
-  font-size: 1.8rem;
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  font-size: 2rem;
+  padding: 1rem;
+  font-family: inherit;
 }

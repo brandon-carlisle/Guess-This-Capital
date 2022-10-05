@@ -72,6 +72,7 @@ button:focus-visible {
 }
 
 .card {
+  width: 40rem;
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
@@ -145,4 +146,9 @@ button:focus-visible {
   font-size: 2rem;
   padding: 1rem;
   font-family: inherit;
+}
+
+.btn__start-game {
+  margin: 0 auto;
+  padding: 2rem;
 }

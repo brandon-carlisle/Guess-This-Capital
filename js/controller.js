@@ -4,49 +4,53 @@ import { wait } from './helpers';
 import cardView from './views/cardView';
 import formView from './views/formView';
 import gameInfoView from './views/gameInfoView';
+import bodyView from './views/bodyView';
 
-const controlCard = async function () {
-  // Load country
-  await model.loadCountry();
+const startGame = function () {
+  const controlCard = async function () {
+    // Load country
+    await model.loadCountry();
 
-  // Render Country
-  cardView.render(model.state.currentCountry);
-  console.log(model.state.currentCountry);
-};
-controlCard();
+    // Render Country
+    cardView.render(model.state.currentCountry);
+    console.log(model.state.currentCountry);
+  };
+  controlCard();
 
-const controlSubmitAnswer = async function (data) {
-  try {
-    // If answer is correct
-    if (model.checkAnswer(data)) {
-      formView.clear();
-      gameInfoView.showAnswerIcon(true);
-      model.addCurrentScore();
-      gameInfoView.updateScoreEl(model.state.currentScore);
+  const controlSubmitAnswer = async function (data) {
+    try {
+      // If answer is correct
+      if (model.checkAnswer(data)) {
+        formView.clear();
+        gameInfoView.showAnswerIcon(true);
+        model.addCurrentScore();
+        gameInfoView.updateScoreEl(model.state.currentScore);
 
-      await wait(2);
-      controlCard();
-      gameInfoView.hideAnswerIcon();
+        await wait(2);
+        controlCard();
+        gameInfoView.hideAnswerIcon();
+      }
+
+      // If answer is incorrect
+      if (!model.checkAnswer(data)) {
+        formView.clear();
+        gameInfoView.showAnswerIcon(false);
+        model.removeCurrentScore();
+        gameInfoView.updateScoreEl(model.state.currentScore);
+
+        await wait(2);
+        controlCard();
+        gameInfoView.hideAnswerIcon();
+      }
+    } catch (error) {
+      console.error(error);
     }
+  };
 
-    // If answer is incorrect
-    if (!model.checkAnswer(data)) {
-      formView.clear();
-      gameInfoView.showAnswerIcon(false);
-      model.removeCurrentScore();
-      gameInfoView.updateScoreEl(model.state.currentScore);
+  const init = function () {
+    formView.submitAnswerHandler(controlSubmitAnswer);
+  };
 
-      await wait(2);
-      controlCard();
-      gameInfoView.hideAnswerIcon();
-    }
-  } catch (error) {
-    console.error(error);
-  }
+  init();
 };
-
-const init = function () {
-  formView.submitAnswerHandler(controlSubmitAnswer);
-};
-
-init();
+startGame();

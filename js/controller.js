@@ -4,7 +4,6 @@ import { wait } from './helpers';
 import cardView from './views/cardView';
 import formView from './views/formView';
 import gameInfoView from './views/gameInfoView';
-import bodyView from './views/bodyView';
 
 const startGame = function () {
   const controlCard = async function () {
